@@ -16,11 +16,13 @@ public class MemoServiceImpl implements MemoService {
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<MemoDto> getMemoList(int articleno) throws Exception {
-		List<MemoDto> temp = sqlSession.getMapper(MemoMapper.class).getMemoList(articleno);
-		System.out.println("memo list size : "+temp.size());
-		System.out.println("memo list content : " + temp.get(0).getComment());
-		return sqlSession.getMapper(MemoMapper.class).getMemoList(articleno);
+	public List<MemoDto> getMemoList(int articleno2) throws Exception {
+		List<MemoDto> temp = sqlSession.getMapper(MemoMapper.class).getMemoList(articleno2);
+		System.out.println("memo list size (수정) : "+temp.size());
+		int test = 0;
+		String str = "test";
+		System.out.println(str);
+		return sqlSession.getMapper(MemoMapper.class).getMemoList(articleno2);
 	}
 
 	@Override
