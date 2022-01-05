@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.vue.model.mapper.HouseDealMapper">
+
+	<select id="searchByDongName" parameterType="string" resultType="houseDealDto">
+		select *
+		from housedeal hd inner join houseinfo hi
+		on hd.aptCode = hi.aptCode
+		where hi.dongName like concat('%', #{dongName}, '%')
+		limit 0, 30
+	</select>
+	
+	<select id="searchByAptName" parameterType="string" resultType="houseDealDto">
+		select *
+		from housedeal hd inner join houseinfo hi
+		on hd.aptCode = hi.aptCode
+		where hi.aptName like concat('%', #{aptName}, '%')
+		limit 0, 30
+	</select>
+
+	<select id="searchByDongNameJaeum" parameterType="string" resultType="houseDealDto">
+		select *
+		from housedeal hd inner join houseinfo hi
+		on hd.aptCode = hi.aptCode
+		where hi.dongNameJaeum like concat(#{dongNameJaeum}, '%')
+		limit 0, 30
+	</select>
+	
+	<select id="searchByAptNameJaeum" parameterType="string" resultType="houseDealDto">
+		select *
+		from housedeal hd inner join houseinfo hi
+		on hd.aptCode = hi.aptCode
+		where hi.aptNameJaeum like concat(#{aptNameJaeum}, '%')
+		limit 0, 30
+	</select>
+
+</mapper>
