@@ -19,7 +19,9 @@ public class MemoServiceImpl implements MemoService {
 	public List<MemoDto> getMemoList(int articleno2) throws Exception {
 		List<MemoDto> temp = sqlSession.getMapper(MemoMapper.class).getMemoList(articleno2);
 		System.out.println("memo list size (수정) : "+temp.size());
-		System.out.println("memo list content (수정) : " + temp.get(0).getComment());
+		int test = 0;
+		String str = "test";
+		System.out.println(str);
 		return sqlSession.getMapper(MemoMapper.class).getMemoList(articleno2);
 	}
 
