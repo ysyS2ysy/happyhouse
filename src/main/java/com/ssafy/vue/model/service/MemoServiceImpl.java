@@ -18,8 +18,6 @@ public class MemoServiceImpl implements MemoService {
 	@Override
 	public List<MemoDto> getMemoList(int articleno) throws Exception {
 		List<MemoDto> temp = sqlSession.getMapper(MemoMapper.class).getMemoList(articleno);
-		System.out.println("memo list size : "+temp.size());
-		System.out.println("memo list content : " + temp.get(0).getComment());
 		return sqlSession.getMapper(MemoMapper.class).getMemoList(articleno);
 	}
 
@@ -33,7 +31,6 @@ public class MemoServiceImpl implements MemoService {
 
 	@Override
 	public boolean modifyMemo(MemoDto memoDto) throws Exception {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
